@@ -1,14 +1,6 @@
-"""
-Created on May 05, 2020
-Adapted on May 28, 2021 by andrej
-Adapted on May 02, 2022 by Florian Beck
-Adapted on April 24, 2023 by Florian Beck
-@author: martin
-"""
+
 import unittest
 from datetime import date
-# helpful information about unittests in python
-# https://docs.python.org/3/library/unittest.html
 from random import randint
 import inspect
 
@@ -20,55 +12,6 @@ arr_list_2 = [10, 5, 12, 3]
 arr_list_1_inorder = ["1", "3", "5", "8", "13", "14", "16", "18"]
 arr_list_1_preorder = ["5", "1", "3", "18", "8", "14", "13", "16"]
 arr_list_1_postorder = ["3", "1", "13", "16", "14", "8", "18", "5"]
-
-maxPoints = 18.0  # defines the maximum achievable points for the example tested here
-points = maxPoints  # stores the actually achieved points based on failed unit tests
-summary = ""
-
-
-def deduct_pts(value):
-    global points
-    points = points - value
-    if points < 0:
-        points = 0
-
-
-def resolve_amount_of_pts_to_deduct(argument):
-    pool = {
-        "test_insert": 1,
-        "test_insert_duplicates": 0.25,
-        "test_insert_with_size": 0.25,
-        "test_insert_duplicates_with_size": 0.25,
-        "test_insert_none": 0.25,
-        "test_depth": 1,
-        "test_find": 1,
-        "test_find_non_existing_key": 0.25,
-        "test_find_none_key": 0.25,
-        "test_remove": 4.5,
-        "test_remove_non_existing_key": 0.25,
-        "test_remove_none_key": 0.25,
-        "test_size_with_remove": 0.25,
-        "test_size_with_remove_non_existing": 0.25,
-        "test_inorder": 0.5,
-        "test_preorder": 0.5,
-        "test_postorder": 0.5,
-        "test_get_parent": 0.5,
-        "test_get_parent_of_root": 0.25,
-        "test_is_internal": 0.5,
-        "test_is_external": 0.5,
-        "test_runtime_comparison_check_bst_with_pregen_list": 0.5,
-        "test_runtime_comparison_check_list_with_pregen_list": 0.5,
-        "test_runtime_comparison_assignment_example_bst_check": 1,
-        "test_runtime_comparison_assignment_example_list_check": 1,
-        "test_runtime_comparison_sorted_list": 0.5,
-        "test_is_valid_true": 0.5,
-        "test_is_valid_false": 0.5,
-        "test_return_min_key": 0.25
-    }
-
-    # resolve the pts to deduct from pool
-    return pool.get(argument, 0)
-
 
 def create_bst(dim):
     bst = BinarySearchTree()
