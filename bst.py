@@ -187,13 +187,6 @@ class BinarySearchTree:
 
         self._size -= 1  # Decrement the size
 
-    # Hint: The following 3 methods can be implemented recursively, and 
-    # the keyword `yield from` might be extremely useful here:
-    # http://simeonvisser.com/posts/python-3-using-yield-from-in-generators-part-1.html
-
-    # Also, we use a small syntactic sugar here: 
-    # https://www.pythoninformer.com/python-language/intermediate-python/short-circuit-evaluation/
-
     def inorder(self, node: TreeNode = None) -> Generator[TreeNode, None, None]:
         """Yield nodes in inorder."""
         node = node or self._root
@@ -313,5 +306,3 @@ class BinarySearchTree:
         yield from self._postorder(current_node.left)  # Corrected from _inorder to _postorder
         yield from self._postorder(current_node.right)  # Corrected from _inorder to _postorder
         yield current_node
-    # You can of course add your own methods and/or functions!
-    # (A method is within a class, a function outside of it.)
